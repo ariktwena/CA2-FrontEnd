@@ -9,6 +9,17 @@ import personFacade from "./personFacade";
 $("#error").hide();
 //document.getElementById("error").style.display = "none";
 
+const resetValues = () => {
+    document.getElementById("personEmail").value = "";
+    document.getElementById("personFirstName").value = "";
+    document.getElementById("personLastName").value = "";
+    document.getElementById("addressStreet").value = "";
+    document.getElementById("addressZip").value = "";
+    document.getElementById("addressCity").value = "";
+    document.getElementById("personPhone").value = "";
+    document.getElementById("personHobby").value = "";
+};
+
 const getAllPersons = () => {
     //console.log("Her")
     personFacade.getAllPersons()
@@ -59,6 +70,7 @@ const getAllPersons = () => {
 //Get all persons when page is loaded
 (function () {
     getAllPersons();
+    resetValues();
 })();
 
 //Reload Button
@@ -124,6 +136,8 @@ document.getElementById("savebtn").addEventListener('click', function () {
 
             //Reload persons array
             getAllPersons();
+            //Reset values
+            resetValues();
 
         }).catch(err => {
         if (err.status) {
