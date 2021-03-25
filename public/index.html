@@ -12,6 +12,24 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <h2>All Persons</h2>
+            <div>
+                <form>
+                    <span>Search the Person table: </span>
+                    <select name="cars" id="searchOption">
+                        <option value="ID">Person by ID</option>
+                        <option value="Hobby">Persons by Hobby</option>
+                        <option value="Zip">Persons by Zip Code</option>
+                    </select>
+                    <input type="text" name="searchText" id="searchInput" maxlength="50" size="25" placeholder="Write search input here..."/>
+                    <button type="button" id="search" class="btn-secondary">
+                        Search
+                    </button>
+                </form>
+                <br>
+
+
+
+            </div>
             <div style="min-height: 200px">
                 <table class="table" style="width: 90%">
                     <thead>
@@ -103,20 +121,36 @@
                         <div class="modal-body">
                             <input type="hidden" id="personID"/>
                             <div class="form-group">
-                                <label for="personName">Name</label>
-                                <input type="text" class="form-control" id="editPersonName"/>
+                                <label for="editPersonEmail">Email</label>
+                                <input type="email" class="form-control" id="editPersonEmail" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPersonFirstName">First name</label>
+                                <input type="text" class="form-control" id="editPersonFirstName" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPersonLastName">Last name</label>
+                                <input type="text" class="form-control" id="editPersonLastName" required/>
                             </div>
                             <div class="form-group">
                                 <label for="addressStreet">Street</label>
-                                <input type="text" class="form-control" name="addressStreet" id="editAddressStreet"/>
+                                <input type="text" class="form-control" name="addressStreet" id="editAddressStreet" required/>
                             </div>
                             <div class="form-group">
                                 <label for="addressZip">Zip</label>
-                                <input type="number" class="form-control" name="addressZip" id="editAddressZip"/>
+                                <input type="number" class="form-control" name="addressZip" id="editAddressZip" required/>
                             </div>
                             <div class="form-group">
                                 <label for="addressCity">City</label>
-                                <input type="text" class="form-control" name="addressCity" id="editAddressCity"/>
+                                <input type="text" class="form-control" name="addressCity" id="editAddressCity" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPersonPhone">Phone</label>
+                                <input type="number" class="form-control" name="addressCity" id="editPersonPhone" min="10000000" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPersonHobby">Hobby</label>
+                                <input type="text" class="form-control" name="addressCity" id="editPersonHobby" required/>
                             </div>
 
                             <!-- Allow form submission with keyboard without duplicating the dialog button -->
