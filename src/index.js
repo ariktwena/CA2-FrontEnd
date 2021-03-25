@@ -82,7 +82,7 @@ document.getElementById("savebtn").addEventListener('click', function () {
     }
 
     const hobbies = [
-        {hobby}
+        hobby
     ]
 
     const phone = {
@@ -90,8 +90,8 @@ document.getElementById("savebtn").addEventListener('click', function () {
     }
 
     const phones = [
-        {phone}
-        ]
+        phone
+    ]
 
     const cityInfo = {
         "zipCode": zipCode,
@@ -114,6 +114,7 @@ document.getElementById("savebtn").addEventListener('click', function () {
     }
 
     console.log(person);
+    console.log(JSON.stringify(person));
 
     personFacade.addPerson(person)
         .then(persons => {
