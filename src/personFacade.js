@@ -7,30 +7,30 @@ function getAllPersons(){
         .then(res => handleHttpErrors(res))
 }
 
-function getPersonById(id){
-    return fetch(URL + "/" + id)
-        .then(res => handleHttpErrors(res))
-}
+// function getPersonById(id){
+//     return fetch(URL + "/" + id)
+//         .then(res => handleHttpErrors(res))
+// }
 
 function addPerson(person){
     const option = makeOptions("POST", person);
-    return fetch(URL, option)
+    return fetch(URL + "api/person/", option)
         .then(res => handleHttpErrors(res))
 }
 
 
-function editPerson(person){
-    const option = makeOptions("PUT", person);
-    return fetch(URL + "/" + person.id, option)
-        .then(res => handleHttpErrors(res))
-}
-
-
-function deletePerson(id){
-    const option = makeOptions("DELETE", "");
-    return fetch(URL + "/" + id, option)
-        .then(res => handleHttpErrors(res))
-}
+// function editPerson(person){
+//     const option = makeOptions("PUT", person);
+//     return fetch(URL + "/" + person.id, option)
+//         .then(res => handleHttpErrors(res))
+// }
+//
+//
+// function deletePerson(id){
+//     const option = makeOptions("DELETE", "");
+//     return fetch(URL + "/" + id, option)
+//         .then(res => handleHttpErrors(res))
+// }
 
 
 //Options for POST, PUT og DELETE
@@ -64,10 +64,10 @@ function handleHttpErrors(res){
 
 const personFacade = {
     getAllPersons,
-    getPersonById,
+    // getPersonById,
     addPerson,
-    editPerson,
-    deletePerson
+    // editPerson,
+    // deletePerson
 }
 
 export default personFacade;

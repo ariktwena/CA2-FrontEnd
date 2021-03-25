@@ -67,16 +67,54 @@ document.getElementById("reload").addEventListener('click', function () {
 });
 
 document.getElementById("savebtn").addEventListener('click', function () {
-    const name = document.getElementById("personName").value;
+    const email = document.getElementById("personEmail").value;
+    const firstName = document.getElementById("personFirstName").value;
+    const lastName = document.getElementById("personLastName").value;
     const street = document.getElementById("addressStreet").value;
-    const zip = document.getElementById("addressZip").value;
+    const zipCode = document.getElementById("addressZip").value;
     const city = document.getElementById("addressCity").value;
-    const person = {
-        name,
-        street,
-        zip,
-        city
+    const number = document.getElementById("personPhone").value;
+    const name = document.getElementById("personHobby").value;
+
+    const hobby = {
+        "name": name,
+        "description": ""
     }
+
+    const hobbies = [
+        {hobby}
+    ]
+
+    const phone = {
+        "number": number
+    }
+
+    const phones = [
+        {phone}
+        ]
+
+    const cityInfo = {
+        "zipCode": zipCode,
+        "city": city
+    }
+
+    const address = {
+        "street": street,
+        "additionalInfo": "",
+        "cityInfo": cityInfo
+    }
+
+    const person = {
+        "email": email,
+        "firstName": firstName,
+        "lastName": lastName,
+        "address": address,
+        "phones": phones,
+        "hobbies": hobbies
+    }
+
+    console.log(person);
+
     personFacade.addPerson(person)
         .then(persons => {
             // console.log("test");
